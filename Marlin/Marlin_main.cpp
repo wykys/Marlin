@@ -14495,7 +14495,7 @@ void prepare_move_to_destination() {
       nextMotorCheck = ms + 2500UL; // Not a time critical function, so only check every 2.5s
 
       // If any of the drivers or the bed are enabled...
-      if (X_ENABLE_READ == X_ENABLE_ON || Y_ENABLE_READ == Y_ENABLE_ON || Z_ENABLE_READ == Z_ENABLE_ON
+      if (X_ENABLE_READ == X_ENABLE_ON || Y_ENABLE_READ == Y_ENABLE_ON || Z_ENABLE_READ == Z_ENABLE_ON || thermalManager.soft_pwm_amount[0] > 0 // tady jsem přidal kontrolu vyhřívání
         #if HAS_HEATED_BED
           || thermalManager.soft_pwm_amount_bed > 0
         #endif
