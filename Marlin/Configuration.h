@@ -395,9 +395,9 @@
 // # define DEFAULT_Kd 440
 
 // wCUBE hotend 12V
-# define DEFAULT_Kd 38.40
-# define DEFAULT_Ki 4.95
-# define DEFAULT_Kp 27.57
+#define DEFAULT_Kp 20.40
+#define DEFAULT_Ki 1.92
+#define DEFAULT_Kd 54.32
 
 
 #endif // PIDTEMP
@@ -891,8 +891,8 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 190
-#define Y_BED_SIZE 160
+#define X_BED_SIZE 200
+#define Y_BED_SIZE 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
