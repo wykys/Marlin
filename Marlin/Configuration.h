@@ -350,11 +350,11 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
-#define HEATER_1_MAXTEMP 275
-#define HEATER_2_MAXTEMP 275
-#define HEATER_3_MAXTEMP 275
-#define HEATER_4_MAXTEMP 275
+#define HEATER_0_MAXTEMP 300
+#define HEATER_1_MAXTEMP 300
+#define HEATER_2_MAXTEMP 300
+#define HEATER_3_MAXTEMP 300
+#define HEATER_4_MAXTEMP 300
 #define BED_MAXTEMP      150
 
 // ===========================================================================
@@ -395,9 +395,9 @@
 // # define DEFAULT_Kd 440
 
 // wCUBE hotend 12V
-#define DEFAULT_Kp 20.40
-#define DEFAULT_Ki 1.92
-#define DEFAULT_Kd 54.32
+#define DEFAULT_Kp 24.22
+#define DEFAULT_Ki 2.55
+#define DEFAULT_Kd 57.55
 
 
 #endif // PIDTEMP
@@ -790,7 +790,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 0 // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 20 // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.715 // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER 0.08 // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 20
@@ -1268,11 +1268,11 @@
 
 // Preheat Constants
 #define PREHEAT_1_TEMP_HOTEND 220
-#define PREHEAT_1_TEMP_BED    60
+#define PREHEAT_1_TEMP_BED    65
 #define PREHEAT_1_FAN_SPEED   0 // Value from 0 to 255
 
 #define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED    80
+#define PREHEAT_2_TEMP_BED    90
 #define PREHEAT_2_FAN_SPEED   0 // Value from 0 to 255
 
 /**
@@ -1286,11 +1286,11 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-// #define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
 // Specify a park position as { X, Y, Z }
-# define NOZZLE_PARK_POINT       { (X_MIN_POS + 10), (Y_MAX_POS - 10), 20 }
+# define NOZZLE_PARK_POINT       { (X_MIN_POS), (Y_MIN_POS), 20 }
 # define NOZZLE_PARK_XY_FEEDRATE 100 // X and Y axes feedrate in mm/s (also used for delta printers Z axis)
 # define NOZZLE_PARK_Z_FEEDRATE  5   // Z axis feedrate in mm/s (not used for delta printers)
 #endif
@@ -1333,7 +1333,7 @@
  * Attention: EXPERIMENTAL. G-code arguments may change.
  *
  */
-// #define NOZZLE_CLEAN_FEATURE
+#define NOZZLE_CLEAN_FEATURE
 
 #if ENABLED(NOZZLE_CLEAN_FEATURE)
 // Default number of pattern repetitions
