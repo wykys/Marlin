@@ -449,9 +449,9 @@
 //
 // Use Junction Deviation instead of traditional Jerk Limiting
 //
-// #define JUNCTION_DEVIATION
+#define JUNCTION_DEVIATION
 #if ENABLED(JUNCTION_DEVIATION)
-# define JUNCTION_DEVIATION_MM 0.02 // (mm) Distance from real junction edge
+# define JUNCTION_DEVIATION_MM 0.015 // (mm) Distance from real junction edge
 #endif
 
 /**
@@ -1101,16 +1101,16 @@
 #if HAS_TRINAMIC
 
 # define R_SENSE         0.11 // R_sense resistor for SilentStepStick2130
-# define HOLD_MULTIPLIER 0.5  // Scales down the holding current from run current
+# define HOLD_MULTIPLIER 0.2  // Scales down the holding current from run current
 # define INTERPOLATE     true // Interpolate X/Y/Z_MICROSTEPS to 256
 
-# define X_CURRENT       800 // rms current in mA. Multiply by 1.41 for peak current.
+# define X_CURRENT       1100 // rms current in mA. Multiply by 1.41 for peak current.
 # define X_MICROSTEPS    16  // 0..256
 
-# define Y_CURRENT       800
+# define Y_CURRENT       1100
 # define Y_MICROSTEPS    16
 
-# define Z_CURRENT       800
+# define Z_CURRENT       1100
 # define Z_MICROSTEPS    16
 
 # define X2_CURRENT      800
@@ -1122,7 +1122,7 @@
 # define Z2_CURRENT      800
 # define Z2_MICROSTEPS   16
 
-# define E0_CURRENT      800
+# define E0_CURRENT      1100
 # define E0_MICROSTEPS   16
 
 # define E1_CURRENT      800
@@ -1151,7 +1151,7 @@
  * Use Trinamic's ultra quiet stepping mode.
  * When disabled, Marlin will use spreadCycle stepping mode.
  */
-# define STEALTHCHOP
+// # define STEALTHCHOP
 
 /**
  * Monitor Trinamic TMC2130 and TMC2208 drivers for error conditions,
@@ -1164,7 +1164,7 @@
  * M912 - Clear stepper driver overtemperature pre-warn condition flag.
  * M122 S0/1 - Report driver parameters (Requires TMC_DEBUG)
  */
-// #define MONITOR_DRIVER_STATUS
+#define MONITOR_DRIVER_STATUS
 
 # if ENABLED(MONITOR_DRIVER_STATUS)
 #  define CURRENT_STEP_DOWN 50 // [mA]

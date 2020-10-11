@@ -123,7 +123,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 // Enable the Bluetooth serial interface on AT90USB devices
 // #define BLUETOOTH
@@ -627,7 +627,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE { 142, 142, 10, 25 } // 10 v Z
+#define DEFAULT_MAX_FEEDRATE { 150, 150, 40, 100 }
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -635,7 +635,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_ACCELERATION { 1000, 1000, 100, 1000 }
+#define DEFAULT_MAX_ACCELERATION { 3000, 3000, 100, 1000 }
 
 /**
  * Default Acceleration (change/s) change = mm/s
@@ -645,9 +645,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION         1000 // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION 1000 // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION  1000 // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION         2000 // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION 2500 // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION  2000 // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk (mm/s)
@@ -790,7 +790,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 0 // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 20 // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER 0.08 // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.9 // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 20
